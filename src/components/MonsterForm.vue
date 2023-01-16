@@ -5,13 +5,27 @@
 	const monsters = useMonsterStore();
 
 	const monster = reactive({
-		name: 'Crunchy',
-		age: 13,
+		name: '',
+		age: '',
 	});
+
+	function save() {
+		const record = {
+			name: monster.name,
+			age: monster.age,
+		};
+		monsters.add(record);
+		clear();
+	}
+
+	function clear() {
+		monster.name = '';
+		monster.age = '';
+	}
 </script>
 
 <template>
-	<form>
+	<form @submit.prevent="save()">
 		<div class="field">
 			<label for="n">Monster Name</label>
 			<input type="text" id="n" v-model="monster.name" />

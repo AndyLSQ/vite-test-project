@@ -4,7 +4,7 @@
 
 <template>
    <main>
-      <h1>Welcome</h1>
+      <h1>Super Food!</h1>
       <MonsterForm />
    </main>
 </template>

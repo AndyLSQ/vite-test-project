@@ -18,6 +18,11 @@ const router = createRouter({
          component: () => import('../views/AboutView.vue'),
       },
       {
+         path: '/contact',
+         name: 'contact',
+         component: () => import('../views/ContactView.vue'),
+      },
+      {
          path: '/form',
          name: 'form',
          // route level code-splitting

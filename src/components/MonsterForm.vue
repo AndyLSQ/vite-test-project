@@ -1,8 +1,8 @@
 <script setup>
 	import { ref, reactive } from 'vue';
-	// import { useMonsterStore } from '@/stores/monsters';
+	import { useMonsterStore } from '@/stores/monsters'; //no .js extension used here
 
-	// const store = useMonsterStore();
+	const monsters = useMonsterStore();
 
 	const monster = reactive({
 		name: 'Crunchy',
@@ -25,11 +25,11 @@
 		<button @click="store.addMonster(monster)" type="submit">Submit</button>
 	</form>
 
-	<!-- <div>
+	<div>
 		<ul>
-			<li v-for="aMonster in store.monsters">
-				<div>{{ aMonster.name }}, {{ aMonster.age }}</div>
+			<li v-for="monster in monsters.list">
+				<div>{{ monster.name }}</div>
 			</li>
 		</ul>
-	</div> -->
+	</div>
 </template>

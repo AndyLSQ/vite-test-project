@@ -9,6 +9,7 @@
 		age: '',
 	});
 
+	//use record constant to allow creating any number of monsters as distinct new objects
 	function save() {
 		const record = {
 			name: monster.name,

@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContactView from '../views/ContactView.vue';
 import MonstersView from '../views/MonstersView.vue';
+import MonsterView from '../views/MonsterView.vue';
 
 import MonsterForm from '../components/MonsterForm.vue';
 
@@ -31,6 +32,11 @@ const router = createRouter({
          path: '/monsters',
          name: 'monsters',
          component: () => import('../views/MonstersView.vue'),
+      },
+      {
+         path: '/monster/:slug',
+         name: 'monster',
+         component: () => import('../views/MonsterView.vue'),
       },
    ],
 });

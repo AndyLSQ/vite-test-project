@@ -58,7 +58,8 @@
       }
 
       .menu-open .site-menu {
-         display: block;
+         display: flex;
+         flex-direction: column;
       }
 
       .menu-closed .site-menu {

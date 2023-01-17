@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 
 export const useMonsterStore = defineStore('monsters', function () {
    // monsters list
-   const list = reactive([{ name: 'one' }, { name: 'two' }]);
+   const list = reactive([]);
 
    // add a monster
    function add(monster) {

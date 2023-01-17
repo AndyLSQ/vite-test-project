@@ -8,12 +8,13 @@
 
 <template>
    <header v-bind:class="`${route.name} ${ui.menuClass}`">
-      <pre>
+      <!-- <pre>
          <code>
-            {{route.name}}
+           'ROUTE NAME:' {{route.name}}
          </code>
-      </pre>
+      </pre> -->
       <div class="wrapper">
+         <button @click="ui.toggleMenu()">Toggle menu</button>
          {{ ui.menuClass }}
          <nav class="site-menu">
             <RouterLink to="/">Home</RouterLink>
@@ -21,8 +22,6 @@
             <RouterLink to="/contact">Contact</RouterLink>
             <RouterLink to="/monsters">Monsters</RouterLink>
          </nav>
-
-         <button @click="ui.toggleMenu()">Toggle menu</button>
       </div>
    </header>
    <main class="outlet">
@@ -45,5 +44,9 @@
 
    .router-link-active {
       border-bottom: 3px solid red;
+   }
+
+   .menu-closed .site-menu {
+      display: none;
    }
 </style>

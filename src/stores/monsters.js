@@ -7,8 +7,8 @@ export const useMonsterStore = defineStore('monsters', function () {
       {
          id: 'asdfsad2343',
          name: 'Munchy',
-         slug: 'munchy',
          age: 13,
+         slug: 'munchy',
       },
    ]);
 

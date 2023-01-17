@@ -1,21 +1,26 @@
 <script setup>
 	import { ref, reactive } from 'vue';
 	import { useMonsterStore } from '@/stores/monsters'; //no .js extension used here
+	import { v4 as uuidv4 } from 'uuid';
+	import slug from 'slug';
 
 	const monsters = useMonsterStore();
 
 	const monster = reactive({
-		name: '',
 		age: '',
+		id: '',
+		name: '',
+		slug: '',
 	});
 
 	//use record constant to allow creating any number of monsters as distinct new objects
 	//TODO: something to create ID, something to make slug into kabob case
 	function save() {
 		const record = {
-			name: monster.name,
 			age: monster.age,
-			slug: monster.name.toLowerCase(),
+			id: uuidv4(),
+			name: monster.name,
+			slug: slug(monster.name),
 		};
 		monsters.add(record);
 		clear();
@@ -45,7 +50,6 @@
 	<div>
 		<ul>
 			<li v-for="monster in monsters.list">
-				<!-- <div>{{ monster.name }}</div> -->
 				<RouterLink :to="`/monster/${monster.slug}`">
 					{{ monster.name }}
 				</RouterLink>

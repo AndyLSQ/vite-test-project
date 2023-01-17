@@ -3,8 +3,5 @@
 </script>
 
 <template>
-   <main>
-      <h1>Super Food!</h1>
-      <MonsterForm />
-   </main>
+   <h1 class="loud-voice">Super Food</h1>
 </template>

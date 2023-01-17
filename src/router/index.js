@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
+import ContactView from '../views/ContactView.vue';
+import MonstersView from '../views/MonstersView.vue';
+
+import MonsterForm from '../components/MonsterForm.vue';
 
 const router = createRouter({
    history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,12 +28,9 @@ const router = createRouter({
          component: () => import('../views/ContactView.vue'),
       },
       {
-         path: '/form',
-         name: 'form',
-         // route level code-splitting
-         // this generates a separate chunk (Form.[hash].js) for this route
-         // which is lazy-loaded when the route is visited.
-         component: () => import('../views/FormView.vue'),
+         path: '/monsters',
+         name: 'monsters',
+         component: () => import('../views/MonstersView.vue'),
       },
    ],
 });

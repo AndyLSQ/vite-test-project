@@ -1,6 +1,4 @@
-<script setup>
-   import MonsterForm from '../components/MonsterForm.vue';
-</script>
+<script setup></script>
 
 <template>
    <h1 class="loud-voice">Super Food</h1>

@@ -44,7 +44,7 @@
 			<input type="number" id="a" v-model="monster.age" />
 		</div>
 
-		<button @click="store.addMonster(monster)" type="submit">Submit</button>
+		<button type="submit">Submit</button>
 	</form>
 
 	<div>

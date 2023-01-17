@@ -22,3 +22,19 @@ form input {
 
 	border: 3px solid var(--ink);
 }
+
+form button {
+	justify-self: start;
+
+	font: inherit;
+	padding: 0.8em 2em;
+
+	background-color: var(--ink);
+	color: var(--paper);
+	border: 3px solid var(--ink);
+}
+
+form button:hover {
+	background-color: var(--color);
+	color: var(--ink);
+}

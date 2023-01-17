@@ -10,10 +10,12 @@
 	});
 
 	//use record constant to allow creating any number of monsters as distinct new objects
+	//TODO: something to create ID, something to make slug into kabob case
 	function save() {
 		const record = {
 			name: monster.name,
 			age: monster.age,
+			slug: monster.name.toLowerCase(),
 		};
 		monsters.add(record);
 		clear();
@@ -43,7 +45,10 @@
 	<div>
 		<ul>
 			<li v-for="monster in monsters.list">
-				<div>{{ monster.name }}</div>
+				<!-- <div>{{ monster.name }}</div> -->
+				<RouterLink :to="`/monster/${monster.slug}`">
+					{{ monster.name }}
+				</RouterLink>
 			</li>
 		</ul>
 	</div>

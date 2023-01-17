@@ -2,7 +2,7 @@ import { ref, computed } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useInterfaceStore = defineStore('interface', function () {
-   const mainMenuOpen = ref(false);
+   const mainMenuOpen = ref(true);
 
    function toggleMenu() {
       // console.log(mainMenuOpen);

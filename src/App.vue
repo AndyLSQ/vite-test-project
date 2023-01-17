@@ -14,8 +14,8 @@
          </code>
       </pre> -->
       <div class="wrapper">
-         <button @click="ui.toggleMenu()">Toggle menu</button>
-         {{ ui.menuClass }}
+         <button @click="ui.toggleMenu()" class="menu-toggle">Toggle menu</button>
+         <!-- {{ ui.menuClass }} -->
          <nav class="site-menu">
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About</RouterLink>
@@ -46,7 +46,23 @@
       border-bottom: 3px solid red;
    }
 
-   .menu-closed .site-menu {
-      display: none;
+   @media (min-width: 500px) {
+      .menu-toggle {
+         display: none;
+      }
+   }
+
+   @media (max-width: 500px) {
+      .site-menu {
+         display: none;
+      }
+
+      .menu-open .site-menu {
+         display: block;
+      }
+
+      .menu-closed .site-menu {
+         display: none;
+      }
    }
 </style>

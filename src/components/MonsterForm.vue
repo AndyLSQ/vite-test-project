@@ -36,7 +36,7 @@
 
 	function focusInput() {
 		console.log('FOCUS: ', nameInput);
-		nameInput.focus();
+		nameInput.value.focus();
 	}
 </script>
 

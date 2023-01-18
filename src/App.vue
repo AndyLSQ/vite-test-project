@@ -4,6 +4,12 @@
 
    const ui = useInterfaceStore();
    const route = useRoute();
+
+   // watch: {
+   //    $route(){
+   //       // do something
+   //    };
+   // }
 </script>
 
 <template>
@@ -60,6 +66,13 @@
       .menu-open .site-menu {
          display: flex;
          flex-direction: column;
+         position: fixed;
+         top: 10;
+         left: 0;
+         width: 100%;
+         /*         height: 75%;*/
+         background-color: var(--paper);
+         border: 3px solid purple;
       }
 
       .menu-closed .site-menu {

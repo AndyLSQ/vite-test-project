@@ -1,17 +1,10 @@
 <script setup>
-	import { ref, reactive } from 'vue';
+	import { ref, reactive, onMounted } from 'vue';
 	import { useMonsterStore } from '@/stores/monsters'; //no .js extension used here
 	import { v4 as uuidv4 } from 'uuid';
 	import slug from 'slug';
 
 	const monsters = useMonsterStore();
-
-	const monster = reactive({
-		age: '',
-		id: '',
-		name: '',
-		slug: '',
-	});
 
 	//use record constant to allow creating any number of monsters as distinct new objects
 	//TODO: something to create ID, something to make slug into kabob case
@@ -24,11 +17,26 @@
 		};
 		monsters.add(record);
 		clear();
+		focusInput();
 	}
+
+	const monster = reactive({
+		age: '',
+		id: '',
+		name: '',
+		slug: '',
+	});
 
 	function clear() {
 		monster.name = '';
 		monster.age = '';
+	}
+
+	const nameInput = ref(null);
+
+	function focusInput() {
+		console.log('FOCUS: ', nameInput);
+		nameInput.focus();
 	}
 </script>
 
@@ -36,7 +44,7 @@
 	<form @submit.prevent="save()">
 		<div class="field">
 			<label for="n">Monster Name</label>
-			<input type="text" id="n" v-model="monster.name" />
+			<input ref="nameInput" type="text" id="n" v-model="monster.name" />
 		</div>
 
 		<div class="field">

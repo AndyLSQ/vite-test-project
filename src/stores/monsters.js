@@ -1,5 +1,6 @@
 import { reactive } from 'vue';
 import { defineStore } from 'pinia';
+import { useStorage } from '@vueuse/core';
 
 export const useMonsterStore = defineStore('monsters', function () {
    // monsters list

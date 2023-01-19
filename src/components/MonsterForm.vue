@@ -3,7 +3,7 @@
 	import { useMonsterStore } from '@/stores/monsters'; //no .js extension used here
 	import { v4 as uuidv4 } from 'uuid';
 	import slug from 'slug';
-
+	import { useStorage } from '@vueuse/core';
 	const monsters = useMonsterStore();
 
 	//use record constant to allow creating any number of monsters as distinct new objects
